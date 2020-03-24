@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App component renders correctly 1`] = `
-"<div>
-  <header>
+"<div className=\\"container\\">
+  <header className=\\"header\\">
     Sample Test Driven Development Project
   </header>
   <Button className=\\"btn-add\\" onClick={[Function]} variant=\\"primary\\" active={false} disabled={false} type=\\"button\\">

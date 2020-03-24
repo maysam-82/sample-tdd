@@ -17,8 +17,8 @@ class App extends Component {
 	};
 	render() {
 		return (
-			<div>
-				<header>Sample Test Driven Development Project</header>
+			<div className="container">
+				<header className="header">Sample Test Driven Development Project</header>
 				<Button className="btn-add" onClick={this.addNewItem}>
 					Add New Item
 				</Button>
