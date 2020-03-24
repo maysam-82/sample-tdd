@@ -5,5 +5,8 @@ exports[`App component renders correctly 1`] = `
   <header>
     Sample Test Driven Development Project
   </header>
+  <Button className=\\"btn-add\\" onClick={[Function]} variant=\\"primary\\" active={false} disabled={false} type=\\"button\\">
+    Add New Item
+  </Button>
 </div>"
 `;
