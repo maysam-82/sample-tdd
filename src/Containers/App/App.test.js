@@ -7,4 +7,7 @@ describe('App component', () => {
 	it('renders correctly', () => {
 		expect(app.debug()).toMatchSnapshot();
 	});
+	it('initializes the `state` with an empty list of items', () => {
+		expect(app.state().items).toEqual([]);
+	});
 });
