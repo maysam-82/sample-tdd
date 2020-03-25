@@ -21,11 +21,11 @@ class App extends Component {
 			<div className="container">
 				<header className="header">Sample Test Driven Development Project</header>
 				<ul className="items-list">
-					{items &&
-						items.length &&
-						items.map(({ id }) => {
-							return <li key={id}>{id}</li>;
-						})}
+					{items && items.length
+						? items.map(({ id }) => {
+								return <li key={id}>{id}</li>;
+						  })
+						: null}
 				</ul>
 				<Button className="btn-add" onClick={this.addNewItem}>
 					Add New Item
