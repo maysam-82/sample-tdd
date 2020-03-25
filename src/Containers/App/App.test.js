@@ -10,12 +10,18 @@ describe('App component', () => {
 	it('initializes the `state` with an empty list of items', () => {
 		expect(app.state().items).toEqual([]);
 	});
-	it('adds a new item to `state` items array while clicking the `add items` button', () => {
-		app.find('.btn-add').simulate('click');
-		expect(app.state().items).toEqual([{ id: 1 }]);
-	});
-	it('add new item to items list component while clicking `add items` button', () => {
-		app.find('.btn-add').simulate('click');
-		expect(app.find('.items-list').children().length).toEqual(2);
+	describe('while clicking on `add items` button', () => {
+		beforeEach(() => {
+			app.find('.btn-add').simulate('click');
+		});
+		afterEach(() => {
+			app.setState({ items: [] });
+		});
+		it('adds a new item to `state` items array', () => {
+			expect(app.state().items).toEqual([{ id: 1 }]);
+		});
+		it('adds new item to items list component', () => {
+			expect(app.find('.items-list').children().length).toEqual(1);
+		});
 	});
 });
