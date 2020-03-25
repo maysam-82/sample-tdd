@@ -24,7 +24,7 @@ class App extends Component {
 					{items &&
 						items.length &&
 						items.map(({ id }) => {
-							return <li key={id}>{name}</li>;
+							return <li key={id}>{id}</li>;
 						})}
 				</ul>
 				<Button className="btn-add" onClick={this.addNewItem}>
