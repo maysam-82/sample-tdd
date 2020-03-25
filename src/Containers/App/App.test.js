@@ -14,4 +14,8 @@ describe('App component', () => {
 		app.find('.btn-add').simulate('click');
 		expect(app.state().items).toEqual([{ id: 1 }]);
 	});
+	it('add new item to items list component while clicking `add items` button', () => {
+		app.find('.btn-add').simulate('click');
+		expect(app.find('.items-list').children().length).toEqual(2);
+	});
 });

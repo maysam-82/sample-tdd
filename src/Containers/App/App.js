@@ -16,9 +16,17 @@ class App extends Component {
 		this.setState({ items });
 	};
 	render() {
+		const { items } = this.state;
 		return (
 			<div className="container">
 				<header className="header">Sample Test Driven Development Project</header>
+				<ul className="items-list">
+					{items &&
+						items.length &&
+						items.map(({ id }) => {
+							return <li key={id}>{name}</li>;
+						})}
+				</ul>
 				<Button className="btn-add" onClick={this.addNewItem}>
 					Add New Item
 				</Button>
