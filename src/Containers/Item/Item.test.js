@@ -7,4 +7,7 @@ describe('Item Component', () => {
 	it('should render correctly', () => {
 		expect(item.debug()).toMatchSnapshot();
 	});
+	it('initializes a person and its item in `state`', () => {
+		expect(item.state()).toEqual({ person: '', itemName: '' });
+	});
 });
