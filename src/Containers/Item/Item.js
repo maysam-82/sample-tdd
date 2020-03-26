@@ -14,7 +14,7 @@ class Item extends Component {
 		const {
 			target: { value },
 		} = event;
-		this.setState({ person: event.target.value });
+		this.setState({ person: value ? value : '' });
 	};
 
 	render() {
