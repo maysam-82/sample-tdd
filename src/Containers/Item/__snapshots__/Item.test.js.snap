@@ -1,3 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Item Component should render correctly 1`] = `"<div className=\\"container\\" />"`;
+exports[`Item Component should render correctly 1`] = `
+"<div className=\\"container\\">
+  <Form inline={false}>
+    <FormGroup>
+      <FormLabel column={false} srOnly={false}>
+        Person Name
+      </FormLabel>
+      <FormControl className=\\"input-person\\" onChange={[Function: onChange]} />
+    </FormGroup>
+  </Form>
+</div>"
+`;
