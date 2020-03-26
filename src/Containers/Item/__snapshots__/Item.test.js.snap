@@ -7,7 +7,11 @@ exports[`Item Component should render correctly 1`] = `
       <FormLabel column={false} srOnly={false}>
         Person Name
       </FormLabel>
-      <FormControl className=\\"input-person\\" onChange={[Function: onChange]} />
+      <FormControl className=\\"input-person\\" onChange={[Function: onChange]} name=\\"person\\" />
+      <FormLabel column={false} srOnly={false}>
+        Item Name
+      </FormLabel>
+      <FormControl className=\\"input-item-name\\" onChange={[Function: onChange]} name=\\"itemName\\" />
     </FormGroup>
   </Form>
 </div>"

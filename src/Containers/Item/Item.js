@@ -12,9 +12,9 @@ class Item extends Component {
 	}
 	onInputChanged = event => {
 		const {
-			target: { value },
+			target: { value, name },
 		} = event;
-		this.setState({ person: value ? value : '' });
+		this.setState({ [name]: value ? value : '' });
 	};
 
 	render() {
@@ -23,7 +23,17 @@ class Item extends Component {
 				<Form>
 					<Form.Group>
 						<Form.Label>Person Name</Form.Label>
-						<Form.Control className="input-person" onChange={event => this.onInputChanged(event)} />
+						<Form.Control
+							className="input-person"
+							onChange={event => this.onInputChanged(event)}
+							name="person"
+						/>
+						<Form.Label>Item Name</Form.Label>
+						<Form.Control
+							className="input-item-name"
+							onChange={event => this.onInputChanged(event)}
+							name="itemName"
+						/>
 					</Form.Group>
 				</Form>
 			</div>

@@ -12,9 +12,20 @@ describe('Item Component', () => {
 	});
 	describe('while entering name of person in input', () => {
 		const personName = 'Father';
-		beforeEach(() => item.find('.input-person').simulate('change', { target: { value: personName } }));
+		beforeEach(() =>
+			item.find('.input-person').simulate('change', { target: { value: personName, name: 'person' } })
+		);
 		it('should update `person` in `state`', () => {
 			expect(item.state().person).toEqual(personName);
+		});
+	});
+	describe('while entering name of item in input', () => {
+		const itemName = 'Computer';
+		beforeEach(() =>
+			item.find('.input-item-name').simulate('change', { target: { value: itemName, name: 'itemName' } })
+		);
+		it('should update `itemName` in `state`', () => {
+			expect(item.state().itemName).toEqual(itemName);
 		});
 	});
 });
