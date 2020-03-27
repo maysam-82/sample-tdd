@@ -4,6 +4,7 @@ import App from './App';
 
 describe('App component', () => {
 	const app = shallow(<App />);
+	const itemId = 1;
 	it('renders correctly', () => {
 		expect(app.debug()).toMatchSnapshot();
 	});
@@ -18,10 +19,21 @@ describe('App component', () => {
 			app.setState({ items: [] });
 		});
 		it('adds a new item to `state` items array', () => {
-			expect(app.state().items).toEqual([{ id: 1 }]);
+			expect(app.state().items).toEqual([{ id: itemId }]);
 		});
 		it('adds new item to items list component', () => {
 			expect(app.find('.items-list').children().length).toEqual(1);
+		});
+		it('should create Item component', () => {
+			expect(app.find('Item').exists()).toBe(true);
+		});
+	});
+	describe('while clicking on `remove` button', () => {
+		beforeEach(() => {
+			app.instance().onRemoveItem(itemId);
+		});
+		it('should remove item according to its `id`', () => {
+			expect(app.state().items).toEqual([]);
 		});
 	});
 });

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 
 class Item extends Component {
 	constructor(props) {
@@ -18,8 +18,9 @@ class Item extends Component {
 	};
 
 	render() {
+		const { itemId, onRemoveItem } = this.props;
 		return (
-			<div className="container">
+			<li className="container">
 				<Form>
 					<Form.Group>
 						<Form.Label>Person Name</Form.Label>
@@ -34,9 +35,12 @@ class Item extends Component {
 							onChange={event => this.onInputChanged(event)}
 							name="itemName"
 						/>
+						<Button className="btn-remove" onClick={() => onRemoveItem(itemId)}>
+							Remove Item
+						</Button>
 					</Form.Group>
 				</Form>
-			</div>
+			</li>
 		);
 	}
 }

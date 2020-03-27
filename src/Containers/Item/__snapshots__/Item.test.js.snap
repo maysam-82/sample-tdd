@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Item Component should render correctly 1`] = `
-"<div className=\\"container\\">
+"<li className=\\"container\\">
   <Form inline={false}>
     <FormGroup>
       <FormLabel column={false} srOnly={false}>
@@ -12,7 +12,10 @@ exports[`Item Component should render correctly 1`] = `
         Item Name
       </FormLabel>
       <FormControl className=\\"input-item-name\\" onChange={[Function: onChange]} name=\\"itemName\\" />
+      <Button className=\\"btn-remove\\" onClick={[Function: onClick]} variant=\\"primary\\" active={false} disabled={false} type=\\"button\\">
+        Remove Item
+      </Button>
     </FormGroup>
   </Form>
-</div>"
+</li>"
 `;

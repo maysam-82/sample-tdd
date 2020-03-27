@@ -3,7 +3,10 @@ import { shallow } from 'enzyme';
 import Item from './Item';
 
 describe('Item Component', () => {
-	const item = shallow(<Item />);
+	const mockRemove = jest.fn();
+	const itemId = 1;
+	const props = { itemId, onRemoveItem: mockRemove };
+	const item = shallow(<Item {...props} />);
 	it('should render correctly', () => {
 		expect(item.debug()).toMatchSnapshot();
 	});
@@ -26,6 +29,12 @@ describe('Item Component', () => {
 		);
 		it('should update `itemName` in `state`', () => {
 			expect(item.state().itemName).toEqual(itemName);
+		});
+	});
+	describe('while clicking on `remove item` button', () => {
+		item.find('.btn-remove').simulate('click');
+		it('should call `onRemoveItem` callback', () => {
+			expect(mockRemove).toHaveBeenCalledWith(itemId);
 		});
 	});
 });
