@@ -28,6 +28,14 @@ describe('App component', () => {
 			expect(app.find('Item').exists()).toBe(true);
 		});
 	});
+	describe('while clicking on `Add Item` button', () => {
+		beforeEach(() => {
+			app.instance().onAddItem();
+		});
+		it('should add item according to `items` in `state`', () => {
+			expect(app.state().items).toEqual([{ id: itemId }]);
+		});
+	});
 	describe('while clicking on `remove` button', () => {
 		beforeEach(() => {
 			app.instance().onRemoveItem(itemId);
