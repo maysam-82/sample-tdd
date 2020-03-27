@@ -26,13 +26,13 @@ class App extends Component {
 		return (
 			<div className="container">
 				<header className="header">Sample Test Driven Development Project</header>
-				<ul className="items-list">
+				<div className="items-list">
 					{items && items.length
 						? items.map(({ id }) => {
 								return <Item key={id} itemId={id} onRemoveItem={this.onRemoveItem} />;
 						  })
 						: null}
-				</ul>
+				</div>
 				<Button className="btn-add" onClick={this.onAddItem}>
 					Add New Item
 				</Button>

@@ -20,7 +20,7 @@ class Item extends Component {
 	render() {
 		const { itemId, onRemoveItem } = this.props;
 		return (
-			<li className="container">
+			<div className="container">
 				<Form>
 					<Form.Group>
 						<Form.Label>Person Name</Form.Label>
@@ -35,12 +35,12 @@ class Item extends Component {
 							onChange={event => this.onInputChanged(event)}
 							name="itemName"
 						/>
-						<Button className="btn-remove" onClick={() => onRemoveItem(itemId)}>
-							Remove Item
-						</Button>
 					</Form.Group>
+					<Button className="btn-remove" onClick={() => onRemoveItem(itemId)}>
+						Remove Item
+					</Button>
 				</Form>
-			</li>
+			</div>
 		);
 	}
 }
