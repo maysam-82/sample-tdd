@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button } from 'react-bootstrap';
 import Item from '../Item/Item';
+import { maxNumber } from '../../Helper';
 
 class App extends Component {
 	constructor() {
@@ -11,14 +12,13 @@ class App extends Component {
 	}
 	onAddItem = () => {
 		const { items } = { ...this.state };
-		const ids = items.map(({ id }) => id && id);
-		const maximum_id = ids.length > 0 ? Math.max(...ids) : 0;
-		items.push({ id: maximum_id + 1 });
+		const ids = items.map(({ id }) => id);
+		items.push({ id: maxNumber(ids) + 1 });
 		this.setState({ items });
 	};
 	onRemoveItem = itemId => {
-		const { items } = this.state || {};
-		const filteredItemsWithoutItemId = items && items.filter(({ id }) => id !== itemId);
+		const { items } = this.state;
+		const filteredItemsWithoutItemId = items.filter(({ id }) => id !== itemId);
 		this.setState({ items: filteredItemsWithoutItemId });
 	};
 	render() {
