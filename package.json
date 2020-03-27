@@ -39,5 +39,12 @@
 		"enzyme-adapter-react-16": "^1.15.2",
 		"node-sass": "^4.13.1",
 		"sass-loader": "^8.0.2"
+	},
+	"jest": {
+		"collectCoverageFrom": [
+			"src/**/*.js",
+			"!src/index.js",
+			"!src/tempPolyfills.js"
+		]
 	}
 }
