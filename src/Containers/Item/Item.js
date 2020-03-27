@@ -20,7 +20,7 @@ class Item extends Component {
 	render() {
 		const { itemId, onRemoveItem } = this.props;
 		return (
-			<div>
+			<div className={classes.itemContainer}>
 				<Form>
 					<Form.Group>
 						<Form.Label>Person Name</Form.Label>

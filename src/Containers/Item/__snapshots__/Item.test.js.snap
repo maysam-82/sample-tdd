@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Item Component should render correctly 1`] = `
-"<div>
+"<div className=\\"itemContainer\\">
   <Form inline={false}>
     <FormGroup>
       <FormLabel column={false} srOnly={false}>
