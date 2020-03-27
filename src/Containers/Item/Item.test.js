@@ -32,7 +32,7 @@ describe('Item Component', () => {
 		});
 	});
 	describe('while clicking on `remove item` button', () => {
-		item.find('.btn-remove').simulate('click');
+		item.find('.btnRemove').simulate('click');
 		it('should call `onRemoveItem` callback', () => {
 			expect(mockRemove).toHaveBeenCalledWith(itemId);
 		});

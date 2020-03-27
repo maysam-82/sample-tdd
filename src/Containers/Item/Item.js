@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Button } from 'react-bootstrap';
-
+import classes from './item.module.scss';
 class Item extends Component {
 	constructor(props) {
 		super(props);
@@ -20,7 +20,7 @@ class Item extends Component {
 	render() {
 		const { itemId, onRemoveItem } = this.props;
 		return (
-			<div className="container">
+			<div>
 				<Form>
 					<Form.Group>
 						<Form.Label>Person Name</Form.Label>
@@ -36,7 +36,7 @@ class Item extends Component {
 							name="itemName"
 						/>
 					</Form.Group>
-					<Button className="btn-remove" onClick={() => onRemoveItem(itemId)}>
+					<Button className={classes.btnRemove} onClick={() => onRemoveItem(itemId)}>
 						Remove Item
 					</Button>
 				</Form>
